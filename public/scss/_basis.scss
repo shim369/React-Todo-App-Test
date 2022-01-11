@@ -1,0 +1,125 @@
+@charset "utf-8";
+@import "_vars.scss";
+@import "_mixin.scss";
+
+body{
+  font-family: $base_font;
+  color: $txt_color;
+  font-size: 16px;
+  background: $sub_color3;
+}
+.wrap {
+  position: relative;
+}
+.clearfix {
+  &::after {
+    content: '';
+    clear: both;
+    display: block;
+  }
+}
+header {
+  background: $base_color;
+  box-shadow: 0px 0px 3px $base_color;
+  padding: 20px;
+  .header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    h1 {
+      font-size: 30px;
+      display: inline;
+      color: $sub_color3;
+      span {
+        font-size: 12px;
+        font-weight: normal;
+        margin-left: 5px;
+      }
+    }
+  }
+}
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px 0;
+  @include for-size(phone) {
+    width: 88%;
+  }  
+}
+  .btn {
+    border: none;
+    padding: 9px 12px;
+    cursor: pointer;
+    font-weight: bold;
+    &:hover {
+      opacity: .8;
+    }
+    &.add {
+      background: $base_color;
+      color: $sub_color3;
+    }
+    &.purge {
+      background: $base_color;
+      color: $sub_color3;
+      float: right;
+      margin: 10px 0 0;
+    }
+  }
+  .list-box {
+    margin: 30px 0 0;
+    ul {
+      display: inline-block;
+      width: 100%;
+      li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px 10px 2em;
+        font-size: 16px;
+        line-height: 1.5;
+        text-indent: -1.5em;
+        color: #0faf72;
+        &:nth-child(odd) {
+          background-color: $sub_color2;
+        }
+        .cmd {
+          font-size: 24px;
+          cursor: pointer;
+          color: $base_color;
+          margin-left: 25px;
+          &:hover {
+            opacity: .8;
+          }
+        }
+      }
+    }
+  }
+  input[type="checkbox"] {
+    margin-right: 5px;
+  }
+form {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  input[type="text"] {
+    margin-right: 10px;
+    background: $sub_color1;
+    border: none;
+    width: 70%;
+    padding: 9px 12px;
+    box-sizing: border-box;
+    color: #03ba74;
+    font-size: 16px;
+    &::placeholder {
+      color: $sub_color3;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+}
+.done {
+  text-decoration: line-through;
+  text-decoration-color: $base_color;
+  color: $base_color;
+}
